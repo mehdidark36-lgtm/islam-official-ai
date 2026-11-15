@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>islam.official.ai - El Sagrado Corán e Inteligencia Artificial</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #071917; color: #F4F1EA; }
+        .font-amiri { font-family: 'Amiri', serif; }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen">
+    <!-- Header -->
+    <header class="bg-[#051311] border-b border-[#1B3833] py-4 px-6 flex justify-between items-center sticky top-0 z-50">
+        <div class="flex items-center space-x-3">
+            <span class="text-xl">السلام عليكم</span>
+            <span class="text-[#D4AF37] font-serif text-lg hidden sm:inline">| islam.official.ai</span>
+        </div>
+        <div class="text-xs bg-[#123530] text-[#D4AF37] px-4 py-1.5 rounded-full border border-[#D4AF37]/30 font-bold">
+            ⭐ Plataforma Oficial
+        </div>
+    </header>
+
+    <!-- Main Section -->
+    <main class="flex-1 max-w-4xl mx-auto p-6 md:p-10 w-full space-y-8">
+        <div class="bg-gradient-to-r from-[#0D2824] to-[#123530] p-8 md:p-12 rounded-3xl border border-[#1B3833] shadow-2xl text-center space-y-4">
+            <span class="bg-[#D4AF37]/20 text-[#D4AF37] px-3 py-1 rounded-full text-xs font-bold border border-[#D4AF37]/40">
+                Aprende el islam. Descubre el conocimiento.
+            </span>
+            <h1 class="text-3xl md:text-5xl font-bold font-amiri text-[#F4F1EA]">
+                Bienvenido a Islam AI
+            </h1>
+            <p class="text-[#A3B8B3] text-sm md:text-base max-w-xl mx-auto">
+                Tu plataforma moderna e inteligente para explorar el Sagrado Corán, las enseñanzas de los 25 profetas y resolver tus consultas con un asistente especializado.
+            </p>
+            <div class="pt-4 flex justify-center gap-4">
+                <a href="#chat" class="bg-[#D4AF37] text-[#051311] px-6 py-3 rounded-xl font-bold text-sm hover:bg-[#e6c158] transition shadow-lg">
+                    Iniciar Chat IA
+                </a>
+                <a href="#coran" class="bg-[#123530] text-[#F4F1EA] border border-[#1B3833] px-6 py-3 rounded-xl font-bold text-sm hover:bg-[#1B3833] transition">
+                    Ver el Corán
+                </a>
+            </div>
+        </div>
+
+        <!-- Chat Interactivo -->
+        <div id="chat" class="bg-[#051311] p-6 rounded-2xl border border-[#1B3833] space-y-4 shadow-xl">
+            <h3 class="text-xl font-bold text-[#D4AF37] flex items-center space-x-2">
+                <span>💬 Islam AI Asistente</span>
+            </h3>
+            <div class="bg-[#0D2824] p-4 rounded-xl border border-[#1B3833] text-sm text-[#F4F1EA]">
+                <p><strong>Islam AI:</strong> السلام عليكم (As-salamu alaykum). ¿Qué te gustaría aprender hoy sobre el islam, el Corán o los profetas?</p>
+            </div>
+            <div class="flex gap-2">
+                <input type="text" id="userInput" placeholder="Escribe tu pregunta aquí..." class="flex-1 bg-[#071917] border border-[#1B3833] rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#D4AF37]">
+                <button onclick="responderChat()" class="bg-[#D4AF37] text-[#051311] px-6 rounded-xl font-bold text-sm hover:bg-[#e6c158]">Enviar</button>
+            </div>
+            <div id="chatResponse" class="text-xs text-[#8FA8A3]"></div>
+        </div>
+
+        <!-- Sección del Corán y Profetas -->
+        <div id="coran" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-[#051311] p-6 rounded-2xl border border-[#1B3833]">
+                <h4 class="font-bold text-lg text-[#D4AF37]">📖 El Sagrado Corán</h4>
+                <p class="text-sm text-[#8FA8A3] mt-2">Acceso a las 114 suras con texto en árabe original y traducciones al español con audio en directo.</p>
+                <button onclick="alert('Cargando API del Sagrado Corán...')" class="mt-4 bg-[#123530] text-[#D4AF37] border border-[#D4AF37]/30 px-4 py-2 rounded-xl text-xs font-bold">Explorar Suras</button>
+            </div>
+            <div class="bg-[#051311] p-6 rounded-2xl border border-[#1B3833]">
+                <h4 class="font-bold text-lg text-[#D4AF37]">⭐ Los 25 Profetas</h4>
+                <p class="text-sm text-[#8FA8A3] mt-2">Desde Adam hasta Muhammad ﷺ, conoce las historias sagradas y enseñanzas del Corán.</p>
+                <button onclick="alert('Sección de los 25 profetas activa.')" class="mt-4 bg-[#123530] text-[#D4AF37] border border-[#D4AF37]/30 px-4 py-2 rounded-xl text-xs font-bold">Ver Profetas</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#051311] border-t border-[#1B3833] py-6 text-center text-xs text-[#8FA8A3]">
+        <p>islam.official.ai © 2026 - Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        function responderChat() {
+            const input = document.getElementById('userInput').value;
+            const resDiv = document.getElementById('chatResponse');
+            if(!input.trim()) return;
+            resDiv.innerHTML = `<div class="p-3 bg-[#0D2824] rounded-xl border border-[#1B3833] mt-2"><strong>Islam AI:</strong> Sobre "${input}", meditemos en la sabiduría del Corán y la misericordia de Allah. ¡Una excelente pregunta para profundizar en el conocimiento!</div>`;
+            document.getElementById('userInput').value = '';
+        }
+    </script>
+</body>
+</html>
